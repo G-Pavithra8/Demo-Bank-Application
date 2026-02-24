@@ -1,0 +1,106 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 25% 97%;
+    --foreground: 215 60% 12%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 215 60% 12%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 60% 12%;
+
+    --primary: 215 80% 18%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 210 30% 93%;
+    --secondary-foreground: 215 60% 12%;
+
+    --muted: 210 20% 94%;
+    --muted-foreground: 215 15% 45%;
+
+    --accent: 38 92% 50%;
+    --accent-foreground: 215 80% 12%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 214 20% 88%;
+    --input: 214 20% 88%;
+    --ring: 215 80% 18%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 215 80% 14%;
+    --sidebar-foreground: 210 20% 90%;
+    --sidebar-primary: 38 92% 50%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 215 60% 22%;
+    --sidebar-accent-foreground: 210 20% 90%;
+    --sidebar-border: 215 50% 22%;
+    --sidebar-ring: 38 92% 50%;
+
+    /* Banking custom tokens */
+    --hero-gradient-from: 215 80% 14%;
+    --hero-gradient-to: 215 70% 24%;
+    --gold: 38 92% 50%;
+    --gold-light: 40 90% 64%;
+    --navy: 215 80% 18%;
+    --navy-dark: 215 80% 10%;
+    --success: 142 72% 40%;
+    --info: 200 80% 50%;
+  }
+
+  .dark {
+    --background: 215 80% 6%;
+    --foreground: 210 20% 95%;
+    --card: 215 60% 10%;
+    --card-foreground: 210 20% 95%;
+    --popover: 215 60% 10%;
+    --popover-foreground: 210 20% 95%;
+    --primary: 38 92% 50%;
+    --primary-foreground: 215 80% 10%;
+    --secondary: 215 40% 16%;
+    --secondary-foreground: 210 20% 90%;
+    --muted: 215 30% 15%;
+    --muted-foreground: 215 15% 55%;
+    --accent: 38 92% 50%;
+    --accent-foreground: 215 80% 10%;
+    --destructive: 0 62% 40%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 215 30% 18%;
+    --input: 215 30% 18%;
+    --ring: 38 92% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  }
+}
+
+@layer utilities {
+  .hero-gradient {
+    background: linear-gradient(135deg, hsl(var(--hero-gradient-from)), hsl(var(--hero-gradient-to)));
+  }
+  .gold-gradient {
+    background: linear-gradient(135deg, hsl(var(--gold)), hsl(var(--gold-light)));
+  }
+  .text-gold {
+    color: hsl(var(--gold));
+  }
+  .shadow-bank {
+    box-shadow: 0 4px 24px -4px hsl(var(--navy) / 0.12);
+  }
+  .shadow-bank-lg {
+    box-shadow: 0 10px 40px -8px hsl(var(--navy) / 0.18);
+  }
+}
